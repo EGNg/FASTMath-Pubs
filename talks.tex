@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+%\usepackage[final]{pdfpages}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+%\usepackage{rotating}
+\usepackage{ulem}
+%\usepackage{wrapfig}
+%\usepackage{graphicx}
+\usepackage{color}
+\usepackage{url}
+%\usepackage{outline}
+\usepackage{enumitem}
+%\usepackage{wrapfig}
+%\usepackage{float}
+%\usepackage{subfig}
+\usepackage[titles]{tocloft}
+%\floatstyle{boxed} 
+%\restylefloat{figure}
+%\restylefloat{wrapfigure}
+\usepackage{cite}
+
+%\usepackage{longtable}
+%\usepackage{caption}
+%\captionsetup[longtable]{font=normalsize}
+
+%\topmargin -0.75in
+%\footskip 0.7in
+%\textwidth 6.5in
+%\textheight 9.0in
+%\oddsidemargin 0.1in
+%\evensidemargin 0.1in
+
+\newcommand{\Comment}[1]{\textcolor{red}{\bf #1}}
+\newcommand{\Perf}[1]{\textcolor{blue}{\bf #1}}
+\newcommand{\zapspace}{\topsep=1pt\partopsep=1pt\itemsep=1pt\parskip=2pt}
+\setlength{\cftbeforepartskip}{2.5ex}
+
+%\input{definitions}
+
+\newcommand{\smartinclude}[1]{
+   \IfFileExists{#1.tex}{
+      % Assume tex file contains any heading/TOC adjustments
+      \input{#1}
+   }{
+         % If the desired PDF file doesn't exist, warn about it but continue
+         \begin{center}
+            \textbf{\color{red}\Large No file found for '#1'!\\
+                    Tried #1.tex} \\
+         \end{center}
+   }
+}
+\makeatletter
+
+% The following gives us a systematic, central way to squeeze whitespace
+% around section and subsection headings.
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-1.6ex \@plus -1ex \@minus -.2ex}%
+                                   {1.4ex \@plus.2ex}%
+                                   {\normalfont\Large\bfseries}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                                     {-1.ex\@plus -1ex \@minus -.2ex}%
+                                     {1.ex \@plus .2ex}%
+                                     {\normalfont\large\bfseries}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+                            {.5\baselineskip\@plus.7\baselineskip}%
+                            {-.5em}%
+                            {\normalfont\bfseries}}    
+
+\makeatother
+
+
+\begin{document}
+
+{\LARGE\bf 
+Frameworks, Algorithms and Scalable Technologies \\ [5pt]
+for Mathematics (FASTMath)}
+
+
+\section{Talks}
+\nocite{*}
+
+\bibliography{talks}{}
+\bibliographystyle{plain}
+
+\end{document}
